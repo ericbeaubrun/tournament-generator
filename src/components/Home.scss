@@ -7,33 +7,14 @@ $background-color: rgba(18, 18, 18, 0.20);
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
-
   min-height: 100vh;
   padding-left: 4rem;
   padding-right: 4rem;
-  //background-color: $background-color;
   background-color: rgba(84, 84, 84, 0.10);
   border-right: 3px solid #333;
   border-left: 3px solid #333;
-  //box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 0 #000;
-
-
   color: $default-text-color;
   font-family: $default-font-family;
-  //min-height: 100vh;
-  //border-radius: 8px;
-}
-
-h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: $default-text-color;
-  margin: 2rem 0 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid #333;
-  letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
 }
 
 .stats-value {
@@ -48,4 +29,12 @@ h3 {
   background-color: $bg-2;
   border: 3px solid #333;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 0 #000;
+}
+
+
+@media (max-width: 768px) {
+  .homepage-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }

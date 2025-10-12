@@ -1,21 +1,36 @@
 @import '../../config/config';
 
 .participants-list-container {
-  height: 380px;
+  height: 300px;
   overflow-y: auto;
-  padding: 20px;
+  padding: 12px;
   background-color: $bg-2;
   border: 3px solid #333;
   border-radius: 4px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 0 #000;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   position: relative;
+
+  @media (min-width: 576px) {
+    height: 340px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 768px) {
+    height: 380px;
+    padding: 20px;
+  }
+
+  @media (min-width: 992px) {
+    height: 420px;
+  }
 
   &.dragging-active::after {
     content: '';
     position: absolute;
-    left: 16px;
-    right: 16px;
+    left: 12px;
+    right: 12px;
     height: 3px;
     background-color: #ffcc00;
     box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
@@ -23,6 +38,11 @@
     pointer-events: none;
     border-radius: 3px;
     transition: transform 0.2s ease;
+
+    @media (min-width: 576px) {
+      left: 16px;
+      right: 16px;
+    }
   }
 
   &:empty {
@@ -33,14 +53,22 @@
       content: "Aucun participant";
       color: #555;
       font-family: $default-font-family;
-      font-size: 1.2rem;
+      font-size: 1rem;
       text-shadow: 1px 1px 0 #000;
       letter-spacing: 1px;
+
+      @media (min-width: 576px) {
+        font-size: 1.2rem;
+      }
     }
   }
 
   &::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
+
+    @media (min-width: 576px) {
+      width: 12px;
+    }
   }
 
   &::-webkit-scrollbar-track {

@@ -2,51 +2,149 @@
 
 .tournament-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin: 16px 0;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
   background-color: $bg-2;
   border: 2px solid #333;
-  padding: 16px;
+  padding: 10px;
   border-radius: $default-border-radius;
   box-shadow: 0 4px 0 #000, inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
+  @media (min-width: 400px) {
+    gap: 12px;
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  @media (min-width: 580px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    margin: 14px 0;
+  }
+
+  @media (min-width: 768px) {
+    gap: 16px;
+    padding: 16px;
+    margin: 16px 0;
+  }
+
   .participant-count-number {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: $draw-color;
+    font-weight: 600;
+
+    @media (min-width: 480px) {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 
   .clear-participants-btn, .shuffle-btn {
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 48px;
+    min-height: 48px;
+    flex-shrink: 0;
+
+    @media (min-width: 580px) {
+      min-width: 46px;
+      min-height: 46px;
+    }
+
+    @media (min-width: 768px) {
+      min-width: 50px;
+      min-height: 50px;
+    }
   }
 
   .increment-btn, .decrement-btn {
     font-family: Arial, serif;
-    width: 32px;
-    height: 32px;
-    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+
+    @media (min-width: 480px) {
+      width: 38px;
+      height: 38px;
+      font-size: 1.3rem;
+    }
+
+    @media (min-width: 580px) {
+      width: 34px;
+      height: 34px;
+      font-size: 1.4rem;
+    }
+
+    @media (min-width: 768px) {
+      width: 32px;
+      height: 32px;
+      font-size: 1.5rem;
+    }
   }
 }
 
 .participant-counter {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   background-color: #222;
   padding: 8px 10px;
   border: 2px solid #444;
   border-radius: $default-border-radius;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: 580px) {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 8px;
+    padding: 8px 10px;
+  }
 }
 
 .participant-count {
-  min-width: 120px;
+  flex: 1;
   text-align: center;
   color: $default-text-color;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  padding: 0 8px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: 0 6px;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 400px) {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  @media (min-width: 580px) {
+    flex: none;
+    min-width: 100px;
+    padding: 0 4px;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 120px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+  }
 }
 
 //.participant-count, .participant-count-number {

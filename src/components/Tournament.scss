@@ -11,18 +11,51 @@
 .tournament-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 16px;
+  padding: 8px;
+
+  @media (min-width: 576px) {
+    gap: 20px;
+    padding: 12px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 24px;
+    padding: 16px;
+  }
 
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 40px;
+    padding: 24px;
   }
 }
 
 .tournament-controls-main {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding-top: 24px;
+  gap: 8px;
+  padding: 12px 0;
+
+  @media (min-width: 576px) {
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  @media (min-width: 768px) {
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 24px;
+    gap: 4px;
+  }
 }
 
 .clear-participants-btn, .shuffle-btn {
