@@ -2,6 +2,43 @@
 
 $saved-color: #d0a91b;
 
+.history-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-value.history-toggle-btn {
+  padding: 16px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $default-text-color;
+  margin-bottom: 16px;
+  text-align: center;
+  background-color: $bg-2;
+  border: 3px solid #333;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 0 #000;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-family: $default-font-family;
+
+  &:hover {
+    background-color: lighten(#1e1e1e, 5%);
+  }
+  
+  &:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0px 0 #000;
+    transform: translateY(4px);
+  }
+
+  .toggle-icon {
+    font-size: 1.2rem;
+  }
+}
+
 .history-list {
   list-style-type: none;
   padding: 0;

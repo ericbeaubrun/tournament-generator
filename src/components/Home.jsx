@@ -281,10 +281,6 @@ export default function Home() {
                 tournamentToLoad={tournamentToLoad}
             />
 
-            <div className="stats-value">
-                {archivedTournaments ? archivedTournaments.length : 0}/{MAX_TOURNAMENT_HISTORY} tournois récents
-            </div>
-
             <TournamentHistoryList
                 tournaments={archivedTournaments}
                 toggleFavorite={toggleFavorite}

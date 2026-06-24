@@ -1,4 +1,5 @@
-import {EMPTY} from "../../config/config.js";
+import { useState } from "react";
+import { EMPTY, MAX_TOURNAMENT_HISTORY } from "../../config/config.js";
 import "./TournamentHistoryList.scss";
 
 import FavoriteIcon from "../../assets/fav.svg?react";
@@ -14,12 +15,22 @@ const TournamentHistoryList = ({
                                    confirmDeleteTournament
                                }) => {
 
-
+    const [isExpanded, setIsExpanded] = useState(false);
     const ICON_SIZE = 22;
 
     return (
-        <ul className="history-list">
-            {
+        <div className="history-container">
+            <button 
+                className="stats-value history-toggle-btn" 
+                onClick={() => setIsExpanded(!isExpanded)}
+            >
+                <span>{tournaments ? tournaments.length : 0}/{MAX_TOURNAMENT_HISTORY} tournois récents</span>
+                <span className="toggle-icon">{isExpanded ? '▼' : '▶'}</span>
+            </button>
+
+            {isExpanded && (
+                <ul className="history-list">
+                    {
                 tournaments.map((tournament, index) => {
                     const participants = tournament.participants || tournament.participantNames || [];
                     const participantsCount = Array.isArray(participants) ? participants.length : 0;
@@ -101,7 +112,9 @@ const TournamentHistoryList = ({
                     );
                 })
             }
-        </ul>
+                </ul>
+            )}
+        </div>
     );
 };
 
